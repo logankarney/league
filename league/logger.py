@@ -55,7 +55,7 @@ def archive_old_log():
     """
     file_stats = os.stat(log_path)
     ctime = file_stats.st_mtime
-    formatted_time = time.strftime('%m-%d-%y_%H-%M-%s', time.localtime(ctime))
+    formatted_time = time.strftime('%m-%d-%y_%H-%M-%S', time.localtime(ctime))
     archive_file_string = '{}_game.log'.format(formatted_time)
     os.rename(os.path.join(LOG_DIR, LOG_FILE_NAME),
               os.path.join(LOG_DIR, archive_file_string))
